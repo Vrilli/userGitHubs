@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 class="animate__animated animate__bounce tittle-principal">Bienvenidos al Buscador de usuarios de GitHub.</h1>
+    <p class="animate__animated animate__bounce description-tittle">Descubre, explora y obtén información detallada sobre los usuarios de GitHub con nuestra herramienta intuitiva.
+      Nuestro buscador te permite buscar perfiles de GitHub mediante nombres de usuario para acceder a datos relevantes
+      como la cantidad de me gustas, repositorios y más. Además, podrás ver una lista de los repositorios recientes del
+      usuario seleccionado, incluyendo detalles sobre cada uno. Ya sea que estés investigando colaboraciones potenciales
+      o simplemente explorando los proyectos de otros desarrolladores, esta herramienta te proporcionará una visión
+      clara y completa del perfil de cada usuario en GitHub. ¡Empieza a buscar y encuentra la información que necesitas
+      de manera rápida y eficiente!</p>
+
+  <div class="container-form shapedividers_com-3706">
+    
+
+  
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <label class="animate__animated animate__bounce tittle" for="username">Buscador de usuarios de GitHub
+        :</label> <br> <br>
+      <input id="username" formControlName="username" placeholder="Escribe tu usuario de GitHub aquí...."
+        required="true" />
+      <button type="submit">Buscar Info</button>
+    </form>
+  </div>
+  <div class="container-info">
+    <div *ngIf="user">
+      <div class="user-info">
+        <h2 class="tittle-name">{{ user.name }}</h2>
+        <img class="img-perfil" [src]="user.avatar_url" alt="Img-perfil" width="150" />
+        <p class="info-bio">{{ user.bio }}</p>
+      </div>
+
+      <div class="container-repos">
+        <div class="repos">
+          <p><strong>Megustas:</strong></p>
+          <p>{{ user.followers }}</p>
+        </div>
+        <div class="repos">
+          <p><strong>Cantidad de repositorios:</strong></p>
+          <p>{{ user.public_repos }}</p>
+        </div>
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <h3 class="respo-info">Repositorios Recientes:</h3>
+              <ul>
+                <li *ngFor="let repo of repos">
+                  <strong>{{ repo.name }}</strong>
+                  <p>{{ repo.description }}</p>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
