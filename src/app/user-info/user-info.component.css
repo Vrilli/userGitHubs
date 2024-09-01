@@ -32,14 +32,16 @@
     background-size: 100% calc(2vw + 90px);
   }
 }
-.tittle-principal{
+
+.tittle-principal {
   font-size: 30px;
   font-weight: 600;
   color: black;
   text-align: center;
   margin-top: 10px;
 }
-.description-tittle{
+
+.description-tittle {
   font-size: 17px;
   text-align: center;
   text-align: justify;
@@ -99,8 +101,7 @@ button[type="submit"]:hover {
 
 .container-info {
   background-color: #d2c1fb;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 50px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -110,10 +111,7 @@ button[type="submit"]:hover {
 }
 
 .user-info {
-  padding: 10px;
   text-align: center;
-  margin-bottom: 10px;
-  padding-top: 50px;
 }
 
 .tittle-name {
@@ -152,6 +150,5 @@ button[type="submit"]:hover {
 .respo-info {
   font-size: 30px;
   font-weight: 600;
-  padding-bottom: 10px;
   text-align: center;
 }
